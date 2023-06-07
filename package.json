@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "class-names": "^1.0.0",
+    "prop-types": "^15.8.1"
   }
 }
