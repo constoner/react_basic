@@ -1,17 +1,41 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const welcome = (
+    <h1 className='title title--main'>Welcome to Sedona!</h1>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const header = (
+    <header className="page-header">
+    <nav className="navigation">
+        <a className="navigation-logo" href="./index.html">
+          visit.SEDONA
+        </a>
+        <ul className="navigation-list">
+            <li className="navigation-item">
+                <a className="navigation-link navigation-current" href="./index.html" aria-current="page">Home</a>
+            </li>
+            <li className="navigation-item">
+                <a className="navigation-link" href="./about.html">About Sedona</a>
+            </li>
+            <li className="navigation-item">
+                <a className="navigation-link" href="./catalog.html">Hotels</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+);
+
+const rootElement = document.getElementById('root');
+rootElement.style.fontFamily = 'sans-serif';
+
+const root = createRoot(rootElement);
+
+root.render(
+    <>
+        {header}
+        <main>
+            {welcome}
+        </main>
+    </>
+);
