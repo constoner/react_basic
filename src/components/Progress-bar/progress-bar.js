@@ -6,11 +6,11 @@ import './style.css';
 export const ProgressBar = ({percent}) => {
     return (
         <div className = 'progress-bar'>
-            <div className='progress-bar__percent' style={{transform: `scale(${percent/100}, 1)`}}/>
+            <div className='progress-bar__percent' style={{transform: `translateX(${-100 + percent}%)`}}/>
         </div>
     )
-}
+};
 
 ProgressBar.propTypes = {
     percent: PropTypes.number.isRequired
-}
+};

@@ -22,47 +22,53 @@ const App = () => {
   return (
     <>
       <h1 className='title'>Making Bootstrap components</h1>
-      <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-        <Button>default</Button>
-        <Button mode='secondary' size='small'>secondary</Button>
-        <Button mode='success'>success</Button>
-        <Button mode='danger' size='large'>danger</Button>
 
-        <Button disabled className='one-more-class'>Error</Button>
-        <Button counter={4}>counter</Button>
+      <div style={{marginBottom: '20px', padding: '10px', border: '1px solid lightgrey', borderRadius: '10px'}}>
+        <p>Different buttons</p>
+        <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+          <Button>default</Button>
+          <Button mode='secondary' size='small'>secondary</Button>
+          <Button mode='success'>success</Button>
+          <Button mode='danger' size='large'>danger</Button>
+
+          <Button disabled className='one-more-class'>Error</Button>
+          <Button counter={4}>counter</Button>
+        </div>
       </div>
 
-      <br></br>
+      <div style={{marginBottom: '20px', padding: '10px', border: '1px solid lightgrey', borderRadius: '10px'}}>
+        <p>Buttons group (tabs)</p>
+        <ButtonsGroup>
+              <Button>Left</Button>
+              <Button>Midle</Button>
+              <Button>Right</Button>
+        </ButtonsGroup>
+      </div>
 
-      <ButtonsGroup>
-            <Button>Left</Button>
-            <Button>Midle</Button>
-            <Button>Right</Button>
-      </ButtonsGroup>
+      <div style={{marginBottom: '20px', padding: '10px', border: '1px solid lightgrey', borderRadius: '10px'}}>
+        <p>Progress bar</p>
+        <ProgressBar percent={percent}></ProgressBar>
+      </div>
 
-      <br></br>
-
-      <ProgressBar percent={percent}></ProgressBar>
-
-      <br></br>
-      {Boolean(reload) && (
+      <div style={{marginBottom: '20px', padding: '10px', border: '1px solid lightgrey', borderRadius: '10px'}}>
+        <p>Tags group</p>
         <ButtonsGroup className="tag-group" key={reload}>
         <Tag className="search-tag">Popular</Tag>
         <Tag className="search-tag" isClickable={true}>New</Tag>
         <Tag className="search-tag" isClickable={true}>React</Tag>
         <Tag className="search-tag" isClickable={true}>JS</Tag>
         <Tag className="search-tag" isClickable={true}>Frontend</Tag>
-      </ButtonsGroup>
-      )}
-      <br></br>
-      <Button
-        className="button--reset"
-        mode="success"
-        size="small"
-        onClick={() => reloadTags(Math.random())}
-      >
-        Reset tags
-      </Button>
+        </ButtonsGroup>
+        <br></br>
+        <Button
+          className="button--reset"
+          mode="success"
+          size="small"
+          onClick={() => reloadTags(Math.random())}
+        >
+          Reset tags
+        </Button>
+      </div>
     </>
   );
 }
