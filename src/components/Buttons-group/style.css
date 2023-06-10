@@ -1,7 +1,9 @@
 .buttons-group {
     display: flex;
+    gap: 5px;
     align-items: baseline;
     width: fit-content;
+    padding: 5px;
     border: 2px dashed lightgrey;
     border-radius: 6px;
 }

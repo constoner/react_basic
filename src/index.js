@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Button } from './components/Button/Button';
 import { ButtonsGroup } from './components/Buttons-group/Buttons-group';
 import { ProgressBar } from './components/Progress-bar/progress-bar';
+import { Tag } from './components/Tag/Tag';
 
 const App = () => {
   const [percent, setPercent] = useState(0);
@@ -16,10 +17,12 @@ const App = () => {
     clearInterval(interval);
   }, 500);
 
+  const [reload, reloadTags] = useState(0.1);
+
   return (
     <>
       <h1 className='title'>Making Bootstrap components</h1>
-      <div>
+      <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
         <Button>default</Button>
         <Button mode='secondary' size='small'>secondary</Button>
         <Button mode='success'>success</Button>
@@ -40,6 +43,26 @@ const App = () => {
       <br></br>
 
       <ProgressBar percent={percent}></ProgressBar>
+
+      <br></br>
+      {Boolean(reload) && (
+        <ButtonsGroup className="tag-group" key={reload}>
+        <Tag className="search-tag">Popular</Tag>
+        <Tag className="search-tag" isClickable={true}>New</Tag>
+        <Tag className="search-tag" isClickable={true}>React</Tag>
+        <Tag className="search-tag" isClickable={true}>JS</Tag>
+        <Tag className="search-tag" isClickable={true}>Frontend</Tag>
+      </ButtonsGroup>
+      )}
+      <br></br>
+      <Button
+        className="button--reset"
+        mode="success"
+        size="small"
+        onClick={() => reloadTags(Math.random())}
+      >
+        Reset tags
+      </Button>
     </>
   );
 }
