@@ -1,0 +1,13 @@
+.buttons-group {
+    display: flex;
+    gap: 5px;
+    align-items: baseline;
+    width: fit-content;
+    padding: 5px;
+    border: 2px dashed lightgrey;
+    border-radius: 6px;
+}
+
+.buttons-group__item--active {
+    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.6) inset;
+}
